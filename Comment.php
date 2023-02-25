@@ -4,14 +4,14 @@ namespace App;
 
 use DateTime;
 
-class Comment {
-    private User $user;
-    private string $message;
+class Comment
+{
     private DateTime $created_at;
 
-    public function __construct(User $user, $message) {
-        $this->user = $user;
-        $this->message = $message;
+    public function __construct(
+        private User $user,
+        private string $message
+    ) {
         $this->created_at = new DateTime();
     }
 
